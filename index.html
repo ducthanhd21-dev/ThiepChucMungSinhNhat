@@ -3,63 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chúc Mừng Sinh Nhật Mẹ Yêu!</title>
+    <title>Chúc Mừng Sinh Nhật Mẹ ❤️</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="bg-decorations" id="bg-decorations"></div>
+    <!-- Background Particles -->
+    <div id="particles-js"></div>
+    
+    <!-- Music Toggle -->
+    <div class="music-control" id="music-btn">
+        <span id="music-icon">🔇</span>
+        <audio id="bg-music" loop>
+            <!-- Placeholder for Khúc hát mừng sinh nhật - Phan Đinh Tùng -->
+            <source src="https://files.catbox.moe/v08pza.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 
-    <div class="container">
-        <!-- Envelope Intro -->
-        <div class="envelope-wrapper" id="envelope-wrapper">
-            <div class="envelope"></div>
-            <div class="card">
-                <p style="font-family: 'Pacifico', cursive; color: #ff85a2; font-size: 1.5rem;">Gửi Mẹ yêu...</p>
-                <p style="font-size: 0.8rem; margin-top: 10px;">(Bấm để mở)</p>
+    <!-- Stage 1: Intro -->
+    <section id="stage-intro" class="stage active">
+        <div class="content-wrapper">
+            <h1 id="typed-intro"></h1>
+            <button id="start-btn" class="btn-primary" style="display: none; opacity: 0;">Nhấn vào đây nha mẹ ❤️</button>
+        </div>
+    </section>
+
+    <!-- Stage 2: Memory Timeline -->
+    <section id="stage-timeline" class="stage">
+        <!-- Slider: One by one -->
+        <div id="memory-slider" class="active-substage">
+            <div class="slider-wrapper" id="slider-wrapper">
+                <!-- Card 1 -->
+                <div class="memory-card active-card">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&q=80&w=400" alt="Memory 1">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Cảm ơn mẹ vì đã luôn hy sinh cho gia đình mình..."</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="memory-card">
+                    <div class="polaroid">
+                        <img src="/images/anhcuoi.png" alt="Memory 2">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Có những lúc con chưa đủ trưởng thành..."</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="memory-card">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&q=80&w=400" alt="Memory 3">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Nhưng con luôn biết mẹ thương con rất nhiều."</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="memory-card">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=400" alt="Memory 4">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Mẹ luôn là người phụ nữ đẹp nhất trong mắt con."</p>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="memory-card">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&q=80&w=400" alt="Memory 5">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Từng bữa cơm mẹ nấu, từng lời mẹ khuyên..."</p>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="memory-card">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1518173946687-a4c8a3b74251?auto=format&fit=crop&q=80&w=400" alt="Memory 6">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Là hành trang quý giá nhất con mang theo."</p>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="memory-card">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=400" alt="Memory 7">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Con mong mẹ mãi mãi bình an và hạnh phúc."</p>
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="memory-card">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1519222970733-f546218fa6d7?auto=format&fit=crop&q=80&w=400" alt="Memory 8">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Mỗi nụ cười của mẹ là niềm vui của con."</p>
+                    </div>
+                </div>
+                <!-- Card 9 -->
+                <div class="memory-card">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1533038590840-1cde6e668a91?auto=format&fit=crop&q=80&w=400" alt="Memory 9">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Con hứa sẽ cố gắng để mẹ luôn tự hào."</p>
+                    </div>
+                </div>
+                <!-- Card 10 -->
+                <div class="memory-card">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&q=80&w=400" alt="Memory 10">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Cảm ơn mẹ vì tất cả tình yêu thương vô điều kiện."</p>
+                    </div>
+                </div>
+                <!-- Card 11 -->
+                <div class="memory-card">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1516589174421-0678c9746fb6?auto=format&fit=crop&q=80&w=400" alt="Memory 11">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Gia đình mình luôn hạnh phúc khi có mẹ."</p>
+                    </div>
+                </div>
+                <!-- Card 12 -->
+                <div class="memory-card">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1520850403941-996283b9f418?auto=format&fit=crop&q=80&w=400" alt="Memory 12">
+                    </div>
+                    <div class="memory-text">
+                        <p>"Chúc mừng sinh nhật mẹ, người mẹ tuyệt vời nhất thế giới!"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button id="next-memory-btn" class="btn-primary">Tiếp theo ❤️</button>
             </div>
         </div>
 
-        <!-- Main Content -->
-        <div class="main-content" id="main-content">
-            <header>
-                <h1>Chúc Mừng Sinh Nhật Mẹ!</h1>
-                <p class="subtitle">Người phụ nữ tuyệt vời nhất của con</p>
-            </header>
-
-            <main>
-                <div class="message-card">
-                    <div class="message-text" id="typewriter-text">
-                        Gửi mẹ yêu dấu của con,
-
-                        Nhân ngày sinh nhật của mẹ, con muốn gửi tới mẹ những lời chúc tốt đẹp nhất. Cảm ơn mẹ đã luôn là điểm tựa vững chắc, là nguồn động lực lớn lao nhất trong cuộc đời con. 
-
-                        Con chúc mẹ luôn mạnh khỏe, tươi cười và hạnh phúc mỗi ngày. Mong rằng mọi điều may mắn và niềm vui sẽ luôn bên mẹ.
-
-                        Con yêu mẹ rất nhiều!
-                        Con của mẹ.
-                    </div>
-                </div>
-
-                <div class="gallery">
-                    <div class="photo-frame" style="--rotation: -3deg">
-                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&q=80&w=400" alt="Family Memory 1">
-                    </div>
-                    <div class="photo-frame" style="--rotation: 2deg">
-                        <img src="https://images.unsplash.com/photo-1518173946687-a4c8a3b74251?auto=format&fit=crop&q=80&w=400" alt="Family Memory 2">
-                    </div>
-                    <div class="photo-frame" style="--rotation: -1deg">
-                        <img src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&q=80&w=400" alt="Family Memory 3">
-                    </div>
-                </div>
-
-                <div style="text-align: center;">
-                    <button class="btn-reopen" onclick="location.reload()">Gửi lại lần nữa 💖</button>
-                </div>
-            </main>
+        <!-- Grid: All at once -->
+        <div id="memory-grid" class="hidden-substage">
+            <h2 class="collage-title">Ký ức của chúng mình</h2>
+            <div class="collage-grid" id="collage-grid-inner"></div>
+            <button id="to-peak-btn" class="btn-next">Tiếp tục ➔</button>
         </div>
-    </div>
+    </section>
 
+    <!-- Stage 3: Emotional Peak -->
+    <section id="stage-peak" class="stage">
+        <div class="peak-content">
+            <p class="peak-line" id="peak-1">Con không giỏi nói những điều tình cảm...</p>
+            <p class="peak-line" id="peak-2">Nhưng...</p>
+            <p class="peak-line" id="peak-3">Con thật sự rất thương mẹ.</p>
+        </div>
+    </section>
+
+    <!-- Stage 4: Cake -->
+    <section id="stage-cake" class="stage">
+        <div class="cake-container">
+            <div class="cake">
+                <div class="plate"></div>
+                <div class="layer layer-bottom"></div>
+                <div class="layer layer-middle"></div>
+                <div class="layer layer-top"></div>
+                <div class="icing"></div>
+                <div class="drip drip1"></div>
+                <div class="drip drip2"></div>
+                <div class="drip drip3"></div>
+                <div class="candle" id="candle">
+                    <div class="flame" id="flame"></div>
+                </div>
+            </div>
+            <div class="cake-text">
+                <h2>Mẹ thử thổi nến đi 🎉</h2>
+                <p>(Chạm vào ngọn nến nha mẹ)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stage 5: Ending -->
+    <section id="stage-ending" class="stage">
+        <div class="ending-content">
+            <h2 class="final-wish">Chúc mẹ luôn mạnh khỏe, vui vẻ và hạnh phúc.</h2>
+            <h1 class="final-love">Con yêu mẹ nhiều ❤️</h1>
+            <div class="credits">
+                <p>Từ con của mẹ</p>
+                <p id="current-date"></p>
+            </div>
+            <button class="btn-primary" onclick="location.reload()">Xem lại từ đầu 🔄</button>
+        </div>
+    </section>
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
